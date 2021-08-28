@@ -1,5 +1,7 @@
-# TODO: Write docstring here
+"""Use concantonations to build up strings and print them out using my name."""
+__author__: str = input(730332719)
 
-# TODO: Initialize __author__ variable here
-
-# TODO: Implement your program logic here
+name: str = input("What is your name? ")
+print(name + ", you are awesome!")
+print("You're killing it, " + name)
+print("Wow, " + name + ", you are an absolute queen!")
