@@ -1,5 +1,6 @@
 """Use concantonations to build up strings and print them out using my name."""
-__author__: str = input(730332719)
+
+__author__ = "730332719"
 
 name: str = input("What is your name? ")
 print(name + ", you are awesome!")

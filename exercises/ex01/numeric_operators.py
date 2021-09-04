@@ -1,5 +1,6 @@
 """Practicing numeric operators, type conversions, and string concatenation."""
-__author__: str = input(730332719)
+
+__author__ = "730332719"
 
 left_side = input("Left-hand side: ")
 right_side = input("Right-hand side: ")
