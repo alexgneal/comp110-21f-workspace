@@ -13,3 +13,18 @@ from random import randint
 
 
 # Begin your solution here...
+print("Your fortune cookie says...")
+phrase = randint(1, 4) 
+
+
+if phrase == 1:
+    print("Today will be a great day for you!")
+else:
+    if phrase == 2:
+        print("There will be lots of money in your future.")
+    else:
+        if phrase == 3: 
+            print("You will get a 4.0 this semester!")
+        else: 
+            if phrase == 4:
+                print("You will find happiness in the place you least expect it soon!")   
