@@ -27,4 +27,6 @@ else:
             print("You will get a 4.0 this semester!")
         else: 
             if phrase == 4:
-                print("You will find happiness in the place you least expect it soon!")   
+                print("You will find happiness in the place you least expect it soon!") 
+
+print("Now, go spread positive vibes!")  
