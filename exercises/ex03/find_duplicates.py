@@ -8,7 +8,7 @@ duplicate: bool = False
 i: int = 0
 while i < len(word):
     char = word[i]
-    j: int = 0
+    j: int = 0 
     while j < len(word):
         if word[j] == char:
             duplicate = True
