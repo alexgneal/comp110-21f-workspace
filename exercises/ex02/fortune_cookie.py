@@ -11,7 +11,6 @@ __author__ = "730332719"
 # It will evaluate to an int value >= 1 and <= 100. 
 from random import randint
 
-
 # Begin your solution here...
 print("Your fortune cookie says...")
 phrase = randint(1, 4) 
