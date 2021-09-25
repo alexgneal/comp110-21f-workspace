@@ -11,6 +11,7 @@ EMOJI = "\U0001F9F9"
 
 
 def main() -> None:
+    """Where the survey happens."""
     greet()
     answer: str = input("Yes or No? ")
     if answer == "Yes":
@@ -20,7 +21,7 @@ def main() -> None:
             print(f"Great! Hop on your broomstick {EMOJI} and follow me to Hogsmeade, where you'll answer a few questions to see which House you belong in!")
             print(f"Whew...sorry about all that wind, {player}! Let's head into The Three Broomsticks and we'll get started! ")
             questions()
-            score()
+            score(points)
         else: 
             print(f"Straight to Hogwarts? Okay, {player}! We'll go to the Great Hall where the Sorting Hat can guess your results!")
             house()
@@ -29,12 +30,16 @@ def main() -> None:
 
 
 def greet() -> None:
+    """Greet the player and explain what is going on."""
     global player
-    player: str = input("Hello! What is your name? ")"
-    print(f"Hello {player}! This is a quiz to find out which Hogwarts House you belong in! Would you like to begin? ")
+    player = input("Hello! This is a quiz to find out which Hogwarts house you belong in! What is your name? ")
+    print(f"Nice to meet you, {player}! Are you ready to begin? ")
+    return None
 
 
-def score() -> int:
+def score(x: int) -> int:
+    """Calculate the score and assign a house."""
+    global points
     if points <= 5:
         print(f"{player}, you are in Ravenclaw! You are studious, smart, and probably spend most of your time studying. You'll always be the smartest in the room!")
     else:
@@ -49,36 +54,43 @@ def score() -> int:
 
 
 def questions() -> None: 
+    """Ask the questions."""
     global points
-    question_1 = print("Okay! Question 1: During your end-of-year exams, you notice that one of your classmates is cheating with an enchanted quill! What will you do? Here are your options: A. Nothing; you're already at the top of the class. B. Encourage the student to admit to cheating to the professor. C. Tell the professor immediately; cheating is wrong! D. Get an enchanted quill for yourself and thank them for the great idea. ")
-    answer_1: str = input(f"So, {player}, what will your choice be? ")
-    ans(answer_1)
-    keep_going: str = input("Do you want to keep going? ")
-    if keep_going == "Yes":
-        question_2 = print(f"Okay, next question {player}: You would be most hurt if someone called you: A. Dumb. B. Unkind. C. Coward. D. Weak. ")
-        answer_2: str = input(f"So, {player}, what will your choice be? ")
-        ans(answer_2)
+    while points < 5:
+        print("Okay! Question 1: During your end-of-year exams, you notice that one of your classmates is cheating with an enchanted quill! What will you do? Here are your options: A. Nothing; you're already at the top of the class. B. Encourage the student to admit to cheating to the professor. C. Tell the professor immediately; cheating is wrong! D. Get an enchanted quill for yourself and thank them for the great idea. ")
+        answer_1: str = input(f"So, {player}, what will your choice be? ")
+        ans(answer_1)
         keep_going: str = input("Do you want to keep going? ")
         if keep_going == "Yes":
-            question_3 = print("Okay, third question: You're dueling with another wizard; what is the first spell you cast? A. Protego. B. Expelliarmus. C. Stupefy. D. Crucio ")
-            answer_3: str = input(f"So, {player}, what will your choice be? ")
-            ans(answer_3)
-            keep_going: str = input("Do you want to keep going? ")
-            if keep_going == "Yes":
-                question_4 = print("Fourth question: Which skill of yours are you most proud of? A. How smart you are. B. How kind you are to others. C. How you are always up for a new adventure. D. How you can always get what you want. ")
-                answer_4: str = input(f"So, {player}, what will your choice be? ")
-                ans(answer_4)
-                keep_going: str = input("Do you want to keep going? ")
-                if keep_going == "Yes":
-                    question_5 = print(f"Okay {player}, we're almost done! Just one more question. What would you see in the Mirror of Erised? A. Yourself, knowledge above all. B. Yourself, surrounded by family and friends. C. Yourself, experiencing an amazing adventure. D. Yourself, surrounded by all your riches. ")
-                    answer_5: str = input(f"So, {player}, what will your choice be? ")
-                    ans(answer_5)
-                    endgame: str = input(f"Looks like you're all set to head up to the Great Hall in Hogwarts to see where the Sorting Hat wants to put you! Ready to go? ")
+            print(f"Okay, next question {player}: You would be most hurt if someone called you: A. Dumb. B. Unkind. C. Coward. D. Weak. ")
+            answer_2: str = input(f"So, {player}, what will your choice be? ")
+            ans(answer_2)
+            keep_going2: str = input("Do you want to keep going? ")
+            if keep_going2 == "Yes":
+                print("Okay, third question: You're dueling with another wizard; what is the first spell you cast? A. Protego. B. Expelliarmus. C. Stupefy. D. Crucio ")
+                answer_3: str = input(f"So, {player}, what will your choice be? ")
+                ans(answer_3)
+                keep_going3: str = input("Do you want to keep going? ")
+                if keep_going3 == "Yes":
+                    print("Fourth question: Which skill of yours are you most proud of? A. How smart you are. B. How kind you are to others. C. How you are always up for a new adventure. D. How you can always get what you want. ")
+                    answer_4: str = input(f"So, {player}, what will your choice be? ")
+                    ans(answer_4)
+                    keep_going4: str = input("Do you want to keep going? ")
+                    if keep_going4 == "Yes":
+                        print(f"Okay {player}, we're almost done! Just one more question. What would you see in the Mirror of Erised? A. Yourself, knowledge above all. B. Yourself, surrounded by family and friends. C. Yourself, experiencing an amazing adventure. D. Yourself, surrounded by all your riches. ")
+                        answer_5: str = input(f"So, {player}, what will your choice be? ")
+                        ans(answer_5)
+                        endgame: str = input("Looks like you're all set to head up to the Great Hall in Hogwarts to see where the Sorting Hat wants to put you! Ready to go? ")
+                        if endgame == "No": 
+                            print("You want to answer the questions again? Okay!")
+                            points = 0
     else:
         print("Looks like you're tired of playing...we'll just head over to the Great Hall then so the Sorting Hat can guess your results! ")
         house()
 
+
 def ans(answer: str) -> None:
+    """Answers and their point values."""
     global points
     if answer == "A":
         points = points + 1
@@ -95,6 +107,7 @@ def ans(answer: str) -> None:
 
 
 def house() -> None:
+    """Randomly assing your house if you don't want to answer the questions."""
     house = randint(1, 4) 
     if house == 1:
         print(f"{player}, you are in Ravenclaw! You are studious, smart, and probably spend most of your time studying. You'll always be the smartest in the room!")
@@ -107,7 +120,6 @@ def house() -> None:
             else: 
                 if house == 4:
                     print(f"{player}, you are in Slytherin! There is really nothing good to say about this house and you are probably evil :) ")
-
 
 
 if __name__ == "__main__":
